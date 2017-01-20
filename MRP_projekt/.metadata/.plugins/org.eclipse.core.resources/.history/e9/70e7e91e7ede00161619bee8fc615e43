@@ -1,0 +1,23 @@
+
+import java.sql.Connection; 
+import java.sql.DriverManager; 
+import java.sql.Statement;  
+
+public class InsertValues {
+   public static void insertValues(String[] args) { 
+      Connection con = null; 
+      Statement stmt = null; 
+      int result = 0; 
+      try { 
+         Class.forName("org.hsqldb.jdbcDriver"); 
+         con = DriverManager.getConnection( "jdbc:hsqldb:mem:.", "SA", ""); 
+         stmt = con.createStatement(); 
+         result = stmt.executeUpdate("INSERT INTO User (1,'Smieszek18',  NOW())"); 
+         con.commit(); 
+      }catch (Exception e) { 
+         e.printStackTrace(System.out); 
+      } 
+      System.out.println(result+" rows effected"); 
+      System.out.println("Rows inserted successfully"); 
+   } 
+} 

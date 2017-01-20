@@ -1,0 +1,21 @@
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import org.junit.Test;
+
+public class InsertValuesTest {
+
+	Connection con = null; 
+    Statement stmt = null; 
+    int result = 0; 
+	
+	
+	@Test
+	public void test() {
+		
+		
+	}
+
+}

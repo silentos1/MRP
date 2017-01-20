@@ -1,0 +1,36 @@
+import static org.junit.Assert.*;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import org.junit.Test;
+
+public class ConnectDatabaseTest {
+	
+	Connection con = null;
+    Statement stmt = null;
+    int result = 0;
+	
+
+	@Test
+	public void testConnection() {
+	
+		Class.forName("org.hsqldb.jdbcDriver");
+        //Creating the connection with HSQLDB
+        con = DriverManager.getConnection("jdbc:hsqldb:mem:.", "SA", "");
+        if (con!= null){
+           System.out.println("Connection created successfully");
+           
+        }else{
+           System.out.println("Problem with creating connection");
+        }
+     
+     }  catch (Exception e) {
+        e.printStackTrace(System.out);
+     }
+  }
+		
+	}
+
+}

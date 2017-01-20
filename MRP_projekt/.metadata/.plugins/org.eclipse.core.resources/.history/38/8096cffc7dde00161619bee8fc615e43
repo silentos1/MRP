@@ -1,0 +1,26 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Main {
+
+	public static void main(String[] args) {
+	      
+	      Connection con = null;
+	      Statement stmt = null;
+	      int result = 0;
+	      
+	      try {
+	         Class.forName("org.hsqldb.jdbcDriver");
+	         con = DriverManager.getConnection("jdbc:hsqldb:mem:.", "SA", "");
+	         stmt = con.createStatement();
+	         CreateTables.tables(args);
+	         
+	         
+	      }  catch (Exception e) {
+	         e.printStackTrace(System.out);
+	      }
+	     /* System.out.println("Table created successfully");
+	      System.out.println(result+" rows effected"); */
+	   }
+}

@@ -1,0 +1,15 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ConnectDatabaseTest {
+
+	@Test
+	public void testConnection() {
+		ConnectDatabase test = new ConnectDatabase();
+		ConnectDatabase.testconnection(args);
+		
+		
+	}
+
+}

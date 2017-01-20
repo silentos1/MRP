@@ -1,0 +1,18 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ConnectDatabaseTest {
+
+	@Test
+	public void testConnection() {
+		String expected = "My name is";
+	    int actual = 3; // assuming words in string
+	    ConnectDatabase testObj = new ConnectDatabase();
+	    assertEquals(expected, testObj.getConnection(expected + " Bob", 3))
+	    		;
+		
+		
+	}
+
+}
